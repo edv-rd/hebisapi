@@ -39,7 +39,7 @@ export async function fetchRandom(
 export async function addEntry(entryData: {
   entry: string;
   category: string;
-}): Promise<void> {
+}): Promise<{ _id: string; entry: string }> {
   const response = await fetch(`${API_URL}/add`, {
     method: "POST",
     headers: {
@@ -47,6 +47,30 @@ export async function addEntry(entryData: {
     },
     body: JSON.stringify(entryData),
   });
+
+  if (!response.ok) {
+    throw new Error(`Error: ${response.statusText}`);
+  }
+
   const data = await response.json();
-  return data;
+  return data.entry; // Ensure this returns the newly added entry
+}
+
+export async function hideEntry(entryData: {
+  id: string;
+}): Promise<{ message: string }> {
+  const response = await fetch(`${API_URL}/hide`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(entryData),
+  });
+
+  if (!response.ok) {
+    throw new Error(`Error: ${response.statusText}`);
+  }
+
+  const data = await response.json();
+  return data; // Ensure this returns the newly added entry
 }

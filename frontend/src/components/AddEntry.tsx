@@ -3,14 +3,16 @@ import { addEntry } from "../utils/apiGet";
 
 interface AddEntryProps {
   category: string;
+  onEntryAdded: (newEntry: { _id: string; entry: string }) => void;
 }
 
-function AddEntry({ category }: AddEntryProps) {
+function AddEntry({ category, onEntryAdded }: AddEntryProps) {
   const [formEntry, setFormEntry] = useState("");
 
   async function handleAddEntry() {
     try {
-      await addEntry({ entry: formEntry, category });
+      const newEntry = await addEntry({ entry: formEntry, category });
+      onEntryAdded(newEntry);
       setFormEntry(""); // Clear the input field after adding
     } catch (err) {
       console.error(`Error: ${err}`);
