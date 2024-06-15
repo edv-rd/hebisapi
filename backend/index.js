@@ -24,8 +24,7 @@ app.get('/random', async (req, res) => {
     try {
 
         let randomEntry =  await Entry.aggregate([
-            { $match: { category: { $eq: req.query.category } } },
-            { active: { $ne: false }},
+            { $match: { category: req.query.category, active: { $ne: false } } },
             { $sample: { size: 1 } }
         ])
 
