@@ -1,15 +1,24 @@
 import React, { useState } from "react";
 import { addEntry } from "../utils/apiGet";
 
-function AddEntry({ category }) {
+interface AddEntryProps {
+  category: string;
+}
+
+function AddEntry({ category }: AddEntryProps) {
   const [formEntry, setFormEntry] = useState("");
 
   async function handleAddEntry() {
-    await addEntry(category, formEntry);
+    try {
+      await addEntry({ entry: formEntry, category });
+      setFormEntry(""); // Clear the input field after adding
+    } catch (err) {
+      console.error(`Error: ${err}`);
+    }
   }
 
   return (
-    <div className="flex">
+    <>
       <input
         className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
         type="text"
@@ -23,7 +32,7 @@ function AddEntry({ category }) {
       >
         Add entry
       </button>
-    </div>
+    </>
   );
 }
 

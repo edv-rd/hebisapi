@@ -1,4 +1,11 @@
-const categories = [
+interface Category {
+  category: string;
+  name: string;
+  info: string;
+  id: number;
+}
+
+const categories: Category[] = [
   {
     category: "nickname",
     name: "Discord-namn",
