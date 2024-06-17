@@ -26,14 +26,16 @@ function Entry({ entry, id, onEntryHidden, active }: EntryProps) {
   return (
     <div className="gap-4 flex content-around">
       <p
-        className={`text-lg text-red-500 font-extrabold hover:cursor-pointer `}
+        className={`text-lg${
+          active ? "text-red-500" : "text-gray-500"
+        }  font-extrabold hover:cursor-pointer `}
         onClick={handleHideEntry}
       >
         {loading ? "..." : "x"}
       </p>
       <p
-        className={`${active ? "text-red-500" : "text-gray-500"} text-lg ${
-          active ? "" : "stroke-pink-600"
+        className={`${active ? "" : "text-gray-500"} text-lg ${
+          active ? "" : "line-through"
         }`}
       >
         {entry}
