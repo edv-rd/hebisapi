@@ -49,7 +49,9 @@ function Entries({ category }: EntriesProps) {
 
   const handleEntryHidden = (id: string) => {
     setEntries((prevEntries) =>
-      prevEntries.filter((entry) => entry._id !== id)
+      prevEntries.map((entry) =>
+        entry._id === id ? { ...entry, active: false } : entry
+      )
     );
   };
 
