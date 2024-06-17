@@ -1,8 +1,8 @@
 import API_URL from "./urls";
 
-export async function fetchAll(
-  category: string
-): Promise<{ response: { entries: { _id: string; entry: string }[] } }> {
+export async function fetchAll(category: string): Promise<{
+  response: { entries: { _id: string; entry: string; active: boolean }[] };
+}> {
   return fetch(
     `${API_URL}/all?` +
       new URLSearchParams({
@@ -39,7 +39,7 @@ export async function fetchRandom(
 export async function addEntry(entryData: {
   entry: string;
   category: string;
-}): Promise<{ _id: string; entry: string }> {
+}): Promise<{ _id: string; entry: string; active: boolean }> {
   const response = await fetch(`${API_URL}/add`, {
     method: "POST",
     headers: {
@@ -53,7 +53,7 @@ export async function addEntry(entryData: {
   }
 
   const data = await response.json();
-  return data.entry; // Ensure this returns the newly added entry
+  return data; // Ensure this returns the newly added entry
 }
 
 export async function hideEntry(entryData: {

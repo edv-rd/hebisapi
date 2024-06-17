@@ -15,6 +15,7 @@ interface Category {
 interface EntryType {
   _id: string;
   entry: string;
+  active: boolean;
 }
 
 interface EntriesProps {
@@ -78,6 +79,7 @@ function Entries({ category }: EntriesProps) {
                 key={entry._id}
                 id={entry._id}
                 entry={entry.entry}
+                active={entry.active}
                 onEntryHidden={handleEntryHidden}
               />
             ))}

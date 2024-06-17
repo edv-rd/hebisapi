@@ -5,9 +5,10 @@ interface EntryProps {
   entry: string;
   id: string;
   onEntryHidden: (id: string) => void; // Define a prop for handling entry hiding
+  active: boolean;
 }
 
-function Entry({ entry, id, onEntryHidden }: EntryProps) {
+function Entry({ entry, id, onEntryHidden, active }: EntryProps) {
   const [loading, setLoading] = useState(false); // State to manage loading state
 
   const handleHideEntry = async (): Promise<void> => {
@@ -25,13 +26,17 @@ function Entry({ entry, id, onEntryHidden }: EntryProps) {
   return (
     <div className="gap-4 flex content-around">
       <p
-        className="text-lg text-red-500 font-extrabold hover:cursor-pointer"
+        className={`text-lg ${
+          active ? "text-red-500" : "text-gray-500"
+        } font-extrabold hover:cursor-pointer ${
+          active ? "" : "stroke-pink-600"
+        }`}
         onClick={handleHideEntry}
       >
         {loading ? "..." : "x"}
       </p>
       <p className="text-lg">{entry}</p>
-      {loading && <p>Loading...</p>} {/* Display loading message or spinner */}
+      {loading && <p>Loading...</p>}
     </div>
   );
 }

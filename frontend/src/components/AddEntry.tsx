@@ -3,7 +3,11 @@ import { addEntry } from "../utils/apiGet";
 
 interface AddEntryProps {
   category: string;
-  onEntryAdded: (newEntry: { _id: string; entry: string }) => void;
+  onEntryAdded: (newEntry: {
+    _id: string;
+    entry: string;
+    active: boolean;
+  }) => void;
 }
 
 function AddEntry({ category, onEntryAdded }: AddEntryProps) {
@@ -11,7 +15,10 @@ function AddEntry({ category, onEntryAdded }: AddEntryProps) {
 
   async function handleAddEntry() {
     try {
-      const newEntry = await addEntry({ entry: formEntry, category });
+      const newEntry = await addEntry({
+        entry: formEntry,
+        category,
+      });
       onEntryAdded(newEntry);
       setFormEntry(""); // Clear the input field after adding
     } catch (err) {
@@ -27,6 +34,7 @@ function AddEntry({ category, onEntryAdded }: AddEntryProps) {
         value={formEntry}
         onChange={(e) => setFormEntry(e.target.value)}
         placeholder="Add entry"
+        maxLength={category === "nickname" ? 32 : undefined}
       />
       <button
         onClick={handleAddEntry}

@@ -39,7 +39,6 @@ app.get('/all', async (req, res) => {
     try {
         const allEntries = await Entry.find({
             category: req.query.category,
-            active: { $ne: false }
         }).sort({_id:-1});
 
         res.json({ message: `got all in category ${req.query.category}`, response: { entries: allEntries } });
