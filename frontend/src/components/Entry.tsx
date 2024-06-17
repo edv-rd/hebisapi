@@ -26,7 +26,7 @@ function Entry({ entry, id, onEntryHidden, active }: EntryProps) {
   return (
     <div className="gap-4 flex content-around">
       <p
-        className={`text-lg${
+        className={`text-lg ${
           active ? "text-red-500" : "text-gray-500"
         }  font-extrabold hover:cursor-pointer `}
         onClick={handleHideEntry}
