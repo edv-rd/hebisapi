@@ -1,8 +1,8 @@
 interface Category {
   category: string;
+  type: string;
   name: string;
   info: string;
-  id: number;
 }
 
 const categories: Category[] = [
@@ -10,37 +10,121 @@ const categories: Category[] = [
     category: "nickname",
     name: "Discord-namn",
     info: "Namn du får på discord (max 32 tecken)",
-    id: 0,
+    type: "nickname",
   },
   {
     category: "skribent-fornamn",
     name: "Skribent-förnamn",
     info: "Förnamn till skribent",
-    id: 1,
+    type: "skribent",
+  },
+  {
+    category: "skribent-efternamn",
+    name: "Skribent-efternamn",
+    info: "Efternamn till skribent",
+    type: "skribent",
   },
   {
     category: "headline_person",
     name: "Headline-person",
     info: "Person till headline",
-    id: 2,
+    type: "headline",
   },
   {
     category: "headline_aktivitet",
     name: "Headline-aktiviteter",
     info: "Aktiviteter till headline",
-    id: 3,
+    type: "headline",
   },
   {
     category: "headline_plats",
     name: "Headline-platser",
     info: "Platser till headline",
-    id: 4,
+    type: "headline",
   },
   {
     category: "headline_geografi",
     name: "Headline-geografier",
     info: "Geografier till headline",
-    id: 5,
+    type: "headline",
+  },
+  {
+    category: "tidning1",
+    name: "Tidningsförled",
+    info: "Förled till tidning",
+    type: "tidning",
+  },
+  {
+    category: "tidning2",
+    name: "Tidningsefterled",
+    info: "Efterled till tidning",
+    type: "tidning",
+  },
+  {
+    category: "opinion_uppmaning",
+    name: "Uppmaning",
+    info: "Uppmaning - målgrupp - aktiviteter - tidplats",
+    type: "opinion 1",
+  },
+  {
+    category: "opinion_malgrupp",
+    name: "Målgrupp",
+    info: "Uppmaning - målgrupp - aktiviteter - tidplats",
+    type: "opinion 1",
+  },
+  {
+    category: "opinion_aktiviteter",
+    name: "Aktiviteter",
+    info: "Uppmaning - målgrupp - aktiviteter - tidplats",
+    type: "opinion 1",
+  },
+  {
+    category: "opinion_tidplats",
+    name: "Tid eller plats",
+    info: "Uppmaning - målgrupp - aktiviteter - tidplats",
+    type: "opinion 1",
+  },
+  {
+    category: "opinion_koncept",
+    name: "Koncept",
+    info: "Koncept - retorisk fråga?",
+    type: "opinion 2",
+  },
+  {
+    category: "opinion_retorisk_fraga",
+    name: "Retorisk fråga",
+    info: "Koncept - retorisk fråga?",
+    type: "opinion 2",
+  },
+  {
+    category: "opinion_person",
+    name: "Person",
+    info: "Nej, person, det är inte ord med företeelse",
+    type: "opinion 3",
+  },
+  {
+    category: "opinion_ord",
+    name: "Ord",
+    info: "Nej, person, det är inte ord med företeelse",
+    type: "opinion 3",
+  },
+  {
+    category: "opinion_foreteelse",
+    name: "Företeelse",
+    info: "Nej, person, det är inte ord med företeelse",
+    type: "opinion 3",
+  },
+  {
+    category: "opinion_problemet",
+    name: "Problemet",
+    info: "Lösningen på problemet är enkel - lösning",
+    type: "opinion 4",
+  },
+  {
+    category: "opinion_losning",
+    name: "Lösning",
+    info: "Lösningen på problemet är enkel - lösning",
+    type: "opinion 4",
   },
 ];
 

@@ -9,7 +9,6 @@ interface Category {
   category: string;
   name: string;
   info: string;
-  id: number;
 }
 
 interface EntryType {
