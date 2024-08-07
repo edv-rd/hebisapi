@@ -1,0 +1,602 @@
+[
+    {
+        "category": "tidning1",
+        "entry": "Skåne"
+    },
+    {
+        "category": "tidning1",
+        "entry": "Nya"
+    },
+    {
+        "category": "tidning1",
+        "entry": "Fria"
+    },
+    {
+        "category": "tidning1",
+        "entry": "Sydskånska"
+    },
+    {
+        "category": "tidning1",
+        "entry": "Alingsås"
+    },
+    {
+        "category": "tidning1",
+        "entry": "Nerike"
+    },
+    {
+        "category": "tidning1",
+        "entry": "Östgöta"
+    },
+    {
+        "category": "tidning1",
+        "entry": "Svenska"
+    },
+    {
+        "category": "tidning1",
+        "entry": "Oberoende"
+    },
+    {
+        "category": "tidning1",
+        "entry": "Särskilda"
+    },
+    {
+        "category": "tidning1",
+        "entry": "Dagliga"
+    },
+    {
+        "category": "tidning1",
+        "entry": "Sörmlands"
+    },
+    {
+        "category": "tidning1",
+        "entry": "Birsta"
+    },
+    {
+        "category": "tidning2",
+        "entry": "demokraten"
+    },
+    {
+        "category": "tidning2",
+        "entry": "tidningen"
+    },
+    {
+        "category": "tidning2",
+        "entry": "nyheter"
+    },
+    {
+        "category": "tidning2",
+        "entry": "nytt"
+    },
+    {
+        "category": "tidning2",
+        "entry": "bladet"
+    },
+    {
+        "category": "tidning2",
+        "entry": "kuriren"
+    },
+    {
+        "category": "tidning2",
+        "entry": "allehanda"
+    },
+    {
+        "category": "tidning2",
+        "entry": "liberalen"
+    },
+    {
+        "category": "headline_uppmaning",
+        "entry": "10 skäl att"
+    },
+    {
+        "category": "headline_uppmaning",
+        "entry": "Varför jag anser att"
+    },
+    {
+        "category": "headline_uppmaning",
+        "entry": "Vi borde prata mer om att"
+    },
+    {
+        "category": "headline_uppmaning",
+        "entry": "Det är dags att bryta tystnaden om hur"
+    },
+    {
+        "category": "headline_uppmaning",
+        "entry": "Är det bara jag som tycker att"
+    },
+    {
+        "category": "headline_uppmaning",
+        "entry": "Varför pratar ingen om att"
+    },
+    {
+        "category": "headline_uppmaning",
+        "entry": "För mig är det självklart att"
+    },
+    {
+        "category": "headline_uppmaning",
+        "entry": "Löfvén vill inte prata om att"
+    },
+    {
+        "category": "headline_uppmaning",
+        "entry": "Min fru berättade för mig att"
+    },
+    {
+        "category": "headline_uppmaning",
+        "entry": "Ungdomsförbunden måste inse att"
+    },
+    {
+        "category": "headline_uppmaning",
+        "entry": "Det är inte marknadens fel att"
+    },
+    {
+        "category": "headline_målgrupp",
+        "entry": "tonåringar"
+    },
+    {
+        "category": "headline_målgrupp",
+        "entry": "nyinflyttade"
+    },
+    {
+        "category": "headline_målgrupp",
+        "entry": "långtidssjuka"
+    },
+    {
+        "category": "headline_målgrupp",
+        "entry": "skolungdomar"
+    },
+    {
+        "category": "headline_målgrupp",
+        "entry": "invandrare"
+    },
+    {
+        "category": "headline_målgrupp",
+        "entry": "unga flickor"
+    },
+    {
+        "category": "headline_målgrupp",
+        "entry": "äldre män"
+    },
+    {
+        "category": "headline_målgrupp",
+        "entry": "mentalt sjuka"
+    },
+    {
+        "category": "headline_målgrupp",
+        "entry": "stafettläkare"
+    },
+    {
+        "category": "headline_målgrupp",
+        "entry": "EU-migranter"
+    },
+    {
+        "category": "headline_målgrupp",
+        "entry": "fagra unga män"
+    },
+    {
+        "category": "headline_målgrupp",
+        "entry": "mopedbilsförare"
+    },
+    {
+        "category": "headline_målgrupp",
+        "entry": "homofiler"
+    },
+    {
+        "category": "headline_målgrupp",
+        "entry": "invandrargäng"
+    },
+    {
+        "category": "headline_målgrupp",
+        "entry": "fibromyalgisjuka"
+    },
+    {
+        "category": "headline_målgrupp",
+        "entry": "starka och långa män"
+    },
+    {
+        "category": "headline_målgrupp",
+        "entry": "vi som har höga fuktnivåer"
+    },
+    {
+        "category": "headline_målgrupp",
+        "entry": "vi som lätt blir sexuellt upphetsade"
+    },
+    {
+        "category": "headline_målgrupp",
+        "entry": "alla med körkort"
+    },
+    {
+        "category": "headline_målgrupp",
+        "entry": "klimataktivister"
+    },
+    {
+        "category": "headline_målgrupp",
+        "entry": "Greta"
+    },
+    {
+        "category": "headline_aktiviteter",
+        "entry": "borde dra upp sina byxor"
+    },
+    {
+        "category": "headline_aktiviteter",
+        "entry": "borde visa hänsyn"
+    },
+    {
+        "category": "headline_aktiviteter",
+        "entry": "påverkar tryggheten"
+    },
+    {
+        "category": "headline_aktiviteter",
+        "entry": "kostar staten pengar"
+    },
+    {
+        "category": "headline_aktiviteter",
+        "entry": "skapar bekymmer för polisen"
+    },
+    {
+        "category": "headline_aktiviteter",
+        "entry": "monterar ned vår frihet"
+    },
+    {
+        "category": "headline_aktiviteter",
+        "entry": "tar skada av att leva"
+    },
+    {
+        "category": "headline_aktiviteter",
+        "entry": "förstör stadsbilden"
+    },
+    {
+        "category": "headline_aktiviteter",
+        "entry": "känner sig 'kränkta'"
+    },
+    {
+        "category": "headline_aktiviteter",
+        "entry": "har slutat läsa böcker"
+    },
+    {
+        "category": "headline_aktiviteter",
+        "entry": "är ett hot mot vårt sätt att leva"
+    },
+    {
+        "category": "headline_aktiviteter",
+        "entry": "skapar oro"
+    },
+    {
+        "category": "headline_aktiviteter",
+        "entry": "inte visar respekt"
+    },
+    {
+        "category": "headline_aktiviteter",
+        "entry": "har bristfällig intimhygien"
+    },
+    {
+        "category": "headline_aktiviteter",
+        "entry": "skapar glädje och lust"
+    },
+    {
+        "category": "headline_aktiviteter",
+        "entry": "röstar på socialdemokraterna"
+    },
+    {
+        "category": "headline_tidplats",
+        "entry": "idag"
+    },
+    {
+        "category": "headline_tidplats",
+        "entry": "i vår samtid"
+    },
+    {
+        "category": "headline_tidplats",
+        "entry": "i kollektivtrafiken"
+    },
+    {
+        "category": "headline_tidplats",
+        "entry": "i Örkelljunga"
+    },
+    {
+        "category": "headline_tidplats",
+        "entry": "på äldreboenden"
+    },
+    {
+        "category": "headline_tidplats",
+        "entry": "på landsbygden"
+    },
+    {
+        "category": "headline_tidplats",
+        "entry": "i Torslanda"
+    },
+    {
+        "category": "headline_tidplats",
+        "entry": "i Malungs kommun"
+    },
+    {
+        "category": "headline_tidplats",
+        "entry": "i våra bibliotek"
+    },
+    {
+        "category": "headline_tidplats",
+        "entry": "bland våra kvinnor"
+    },
+    {
+        "category": "headline_tidplats",
+        "entry": "i Birsta"
+    },
+    {
+        "category": "koncept",
+        "entry": "Tredje vågens feminism"
+    },
+    {
+        "category": "koncept",
+        "entry": "Toppstyre i Stockholmsregionen"
+    },
+    {
+        "category": "koncept",
+        "entry": "Ökande brist på respekt"
+    },
+    {
+        "category": "koncept",
+        "entry": "Landsbygdens avbefolkning"
+    },
+    {
+        "category": "koncept",
+        "entry": "Skjutningar på öppen gata"
+    },
+    {
+        "category": "koncept",
+        "entry": "Politisk korrekthet"
+    },
+    {
+        "category": "koncept",
+        "entry": "\"Den svenska situationen\""
+    },
+    {
+        "category": "koncept",
+        "entry": "Aktivistiska familjerättsadvokater"
+    },
+    {
+        "category": "koncept",
+        "entry": "Den ökande polariseringen"
+    },
+    {
+        "category": "koncept",
+        "entry": "Dagens samtalsklimat"
+    },
+    {
+        "category": "koncept",
+        "entry": "Tyrannisk Systembolaget-personal"
+    },
+    {
+        "category": "koncept",
+        "entry": "Alkoholmonopolet"
+    },
+    {
+        "category": "koncept",
+        "entry": "Sjöfyllerilagen från 2010"
+    },
+    {
+        "category": "koncept",
+        "entry": "Hot och hat mot oliktänkande"
+    },
+    {
+        "category": "koncept",
+        "entry": "De riktiga problemen"
+    },
+    {
+        "category": "koncept",
+        "entry": "Båda sidors extremism"
+    },
+    {
+        "category": "koncept",
+        "entry": "Att vara gay och ha liten penis"
+    },
+    {
+        "category": "koncept",
+        "entry": "Gräs starkare än mids"
+    },
+    {
+        "category": "retorisk_fråga",
+        "entry": "är det okej"
+    },
+    {
+        "category": "retorisk_fråga",
+        "entry": "ska det vara så"
+    },
+    {
+        "category": "retorisk_fråga",
+        "entry": "vems fel är det"
+    },
+    {
+        "category": "retorisk_fråga",
+        "entry": "är det ett problem"
+    },
+    {
+        "category": "retorisk_fråga",
+        "entry": "vem ligger bakom"
+    },
+    {
+        "category": "retorisk_fråga",
+        "entry": "vad ligger bakom"
+    },
+    {
+        "category": "retorisk_fråga",
+        "entry": "hur kom vi hit"
+    },
+    {
+        "category": "retorisk_fråga",
+        "entry": "vad säger Löfvén"
+    },
+    {
+        "category": "retorisk_fråga",
+        "entry": "vem har vi att skylla"
+    },
+    {
+        "category": "retorisk_fråga",
+        "entry": "vem vågar stå till svars"
+    },
+    {
+        "category": "retorisk_fråga",
+        "entry": "är det inte dags att tala sanning nu"
+    },
+    {
+        "category": "retorisk_fråga",
+        "entry": "går det att ha en mogen debatt"
+    },
+    {
+        "category": "person",
+        "entry": "Stefan Löfvén"
+    },
+    {
+        "category": "person",
+        "entry": "Annie Lööf"
+    },
+    {
+        "category": "person",
+        "entry": "demokratins fiender"
+    },
+    {
+        "category": "person",
+        "entry": "feminister"
+    },
+    {
+        "category": "person",
+        "entry": "Vänsterpartiet"
+    },
+    {
+        "category": "person",
+        "entry": "Socialdemokraterna"
+    },
+    {
+        "category": "person",
+        "entry": "Belinda Olsson"
+    },
+    {
+        "category": "person",
+        "entry": "Polisen"
+    },
+    {
+        "category": "person",
+        "entry": "Sundsvalls kommun"
+    },
+    {
+        "category": "ord",
+        "entry": "episkt"
+    },
+    {
+        "category": "ord",
+        "entry": "coolt"
+    },
+    {
+        "category": "ord",
+        "entry": "okej"
+    },
+    {
+        "category": "ord",
+        "entry": "inne"
+    },
+    {
+        "category": "ord",
+        "entry": "swag"
+    },
+    {
+        "category": "företeelse",
+        "entry": "korrupta tjänstemän"
+    },
+    {
+        "category": "företeelse",
+        "entry": "omvänd rasism"
+    },
+    {
+        "category": "företeelse",
+        "entry": "rasism mot vita ensamstående män"
+    },
+    {
+        "category": "företeelse",
+        "entry": "manshat"
+    },
+    {
+        "category": "företeelse",
+        "entry": "extremfeminism"
+    },
+    {
+        "category": "företeelse",
+        "entry": "våldsglorifierande hip-hop"
+    },
+    {
+        "category": "företeelse",
+        "entry": "anti-entreprenöriell kulturpolitik"
+    },
+    {
+        "category": "företeelse",
+        "entry": "antivitism"
+    },
+    {
+        "category": "företeelse",
+        "entry": "hatkampanjer mot frihetsälskare"
+    },
+    {
+        "category": "företeelse",
+        "entry": "godhetsknarkande"
+    },
+    {
+        "category": "företeelse",
+        "entry": "bidragsberoende"
+    },
+    {
+        "category": "företeelse",
+        "entry": "penishån"
+    },
+    {
+        "category": "problemet",
+        "entry": "gängkriminaliteten"
+    },
+    {
+        "category": "problemet",
+        "entry": "samhällets mansfobi"
+    },
+    {
+        "category": "problemet",
+        "entry": "den alltmer 'woke' poliskåren"
+    },
+    {
+        "category": "problemet",
+        "entry": "Miljöpartiets parlamentariska diktatur"
+    },
+    {
+        "category": "problemet",
+        "entry": "stormedias partiskhet"
+    },
+    {
+        "category": "problemet",
+        "entry": "den politiska polariseringen"
+    },
+    {
+        "category": "lösning",
+        "entry": "mer pengar till polisen"
+    },
+    {
+        "category": "lösning",
+        "entry": "lägre skatter"
+    },
+    {
+        "category": "lösning",
+        "entry": "samtal"
+    },
+    {
+        "category": "lösning",
+        "entry": "sänkta skatter för småföretagare"
+    },
+    {
+        "category": "lösning",
+        "entry": "avskaffa skjutvapenlicensen"
+    },
+    {
+        "category": "lösning",
+        "entry": "återinför arkebusering"
+    },
+    {
+        "category": "lösning",
+        "entry": "lär ut artighet i skolan"
+    },
+    {
+        "category": "lösning",
+        "entry": "sätt in militären"
+    }
+]
