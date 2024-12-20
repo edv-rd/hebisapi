@@ -39,6 +39,7 @@ export async function fetchRandom(
 export async function addEntry(entryData: {
   entry: string;
   category: string;
+  active: boolean;
 }): Promise<{ _id: string; entry: string; active: boolean }> {
   const response = await fetch(`${API_URL}/add`, {
     method: "POST",
@@ -53,7 +54,7 @@ export async function addEntry(entryData: {
   }
 
   const data = await response.json();
-  return data; // Ensure this returns the newly added entry
+  return data.entry;
 }
 
 export async function hideEntry(entryData: {
@@ -72,5 +73,5 @@ export async function hideEntry(entryData: {
   }
 
   const data = await response.json();
-  return data; // Ensure this returns the newly added entry
+  return data;
 }

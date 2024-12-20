@@ -59,22 +59,28 @@ app.post("/hide", async (req, res) => {
 )
 
 app.post("/add", async (req, res) => {
-    try {
-      const newEntry = await new Entry({
-        entry: req.body.entry,
-        category: req.body.category
-      }).save();
-      res.status(201).json({
-        success: true,
-        entry: newEntry
-      });
-    } catch (e) {
-      res.status(400).json({
-        success: false,
-        response: e,
-      });
-    }
-  });  
+  try {
+    const newEntry = await new Entry({
+      entry: req.body.entry,
+      category: req.body.category,
+      active: true
+    }).save();
+    
+    res.status(201).json({
+      success: true,
+      entry: {
+        _id: newEntry._id,
+        entry: newEntry.entry,
+        active: newEntry.active
+      }
+    });
+  } catch (e) {
+    res.status(400).json({
+      success: false,
+      response: e,
+    });
+  }
+});
 
 app.listen(port, () => {
     console.log(`hebis backend igång på ${port}`);

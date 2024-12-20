@@ -25,7 +25,7 @@ function Entries({ category }: EntriesProps) {
   const [entries, setEntries] = useState<EntryType[]>([]);
   const [collapsed, setCollapsed] = useState<boolean>(false);
 
-  const [loading, setLoading] = useState(false); // State to manage loading state
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     async function fetchEntries() {
@@ -36,14 +36,17 @@ function Entries({ category }: EntriesProps) {
       } catch (err) {
         console.error(`Error: ${err}`);
       } finally {
-        setLoading(false); // Set loading to false after hide operation completes
+        setLoading(false);
       }
     }
     fetchEntries();
   }, [category.category]);
 
   const handleEntryAdded = (newEntry: EntryType) => {
+    console.log("handleEntryAdded");
+
     setEntries((prevEntries) => [newEntry, ...prevEntries]);
+    console.dir(newEntry);
   };
 
   const handleEntryHidden = (id: string) => {
@@ -74,7 +77,7 @@ function Entries({ category }: EntriesProps) {
         {loading ? (
           <Loading />
         ) : (
-          <div className="border-indigo-300 divide-y divide-slate-200">
+          <>
             {entries.map((entry) => (
               <Entry
                 key={entry._id}
@@ -84,7 +87,7 @@ function Entries({ category }: EntriesProps) {
                 onEntryHidden={handleEntryHidden}
               />
             ))}
-          </div>
+          </>
         )}
       </div>
     </div>

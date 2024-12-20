@@ -4,27 +4,27 @@ import { hideEntry } from "../utils/apiGet";
 interface EntryProps {
   entry: string;
   id: string;
-  onEntryHidden: (id: string) => void; // Define a prop for handling entry hiding
+  onEntryHidden: (id: string) => void;
   active: boolean;
 }
 
 function Entry({ entry, id, onEntryHidden, active }: EntryProps) {
-  const [loading, setLoading] = useState(false); // State to manage loading state
+  const [loading, setLoading] = useState(false);
 
   const handleHideEntry = async (): Promise<void> => {
-    setLoading(true); // Set loading to true when starting hide operation
+    setLoading(true);
     try {
       await hideEntry({ id: id });
       onEntryHidden(id);
     } catch (err) {
       console.error(`Error: ${err}`);
     } finally {
-      setLoading(false); // Set loading to false after hide operation completes
+      setLoading(false);
     }
   };
 
   return (
-    <div className="gap-4 flex content-around">
+    <div className="border-indigo-300 divide-y divide-slate-200 gap-4 flex content-around">
       <p
         className={`text-lg ${
           active ? "text-red-500" : "text-gray-500"
