@@ -13,6 +13,12 @@ const categories: Category[] = [
     type: "nickname",
   },
   {
+    category: "holestatus",
+    name: "Hålstatus",
+    info: "Status på hål",
+    type: "holestatus",
+  },
+  {
     category: "skribent-fornamn",
     name: "Skribent-förnamn",
     info: "Förnamn till skribent",
