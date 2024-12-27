@@ -5,6 +5,7 @@ import cors from "cors";
 import {DB_URL} from "./utils.js"
 
 import Entry from "./Schema.js";
+import Result from "./Result.js";
 
 const app = express();
 app.use(express.json());
@@ -80,6 +81,45 @@ app.post("/add", async (req, res) => {
       response: e,
     });
   }
+});
+
+app.post("/puzzlehub/add", async (req, res) => {
+  try {
+    const newResult = await new Result({
+      result: req.body.result,
+      game: req.body.game,
+      username: req.body.username,
+      date: req.body.date,
+    }).save();
+    
+    res.status(201).json({
+      success: true,
+      result: {
+        _id: newResult._id,
+        game: newResult.game,
+        username: newResult.username,
+        date: newResult.date
+      }
+    });
+  } catch (e) {
+    res.status(400).json({
+      success: false,
+      response: e,
+    });
+  }
+});
+
+app.get('/puzzlehub/today', async (req, res) => {
+
+  try {
+      const allEntries = await Result.find({
+          date: req.query.date,
+      }).sort({_id:-1});
+
+      res.json({ response: { allEntries } });
+  } catch (e) {
+      res.status(400).send(e);
+    }
 });
 
 app.listen(port, () => {
