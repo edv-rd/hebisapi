@@ -114,6 +114,7 @@ app.get('/puzzlehub/today', async (req, res) => {
   try {
       const allEntries = await Result.find({
           date: req.query.date,
+          game: req.query.game,
       }).sort({_id:-1});
 
       res.json({ response: { allEntries } });
