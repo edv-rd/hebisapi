@@ -96,6 +96,7 @@ app.post("/puzzlehub/add", async (req, res) => {
       success: true,
       result: {
         _id: newResult._id,
+        result: newResult.result,
         game: newResult.game,
         username: newResult.username,
         date: newResult.date
@@ -110,7 +111,6 @@ app.post("/puzzlehub/add", async (req, res) => {
 });
 
 app.get('/puzzlehub/today', async (req, res) => {
-
   try {
       const allEntries = await Result.find({
           date: req.query.date,
