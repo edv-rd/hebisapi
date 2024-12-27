@@ -85,12 +85,16 @@ app.post("/add", async (req, res) => {
 
 app.post("/puzzlehub/add", async (req, res) => {
   try {
+
+    req.body.results.forEach(async (result) => {
     const newResult = await new Result({
-      result: req.body.result,
-      game: req.body.game,
+      result: result.result,
+      game: result.result.gameName,
       username: req.body.username,
       date: req.body.date,
     }).save();
+  }
+    )
     
     res.status(201).json({
       success: true,
