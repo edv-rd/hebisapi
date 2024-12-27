@@ -92,32 +92,30 @@ app.post("/add", async (req, res) => {
 
 app.post("/puzzlehub/add", async (req, res) => {
   try {
-    req.body.results.forEach(async (result) => {
+    const { username, date, results } = req.body;
+
+    const promises = results.map(async (result) => {
       const existingResult = await Result.findOne({
-        game: result.result.gameName,
+        game: result.gameName,
         username: username,
         date: date,
       });
 
       if (!existingResult) {
-        const newResult = await new Result({
+        await new Result({
           result: result.result,
-          game: result.result.gameName,
+          game: result.gameName,
           username: username,
           date: date,
         }).save();
       }
     });
 
+    await Promise.all(promises);
+
     res.status(201).json({
       success: true,
-      result: {
-        _id: newResult._id,
-        result: newResult.result,
-        game: newResult.game,
-        username: newResult.username,
-        date: newResult.date,
-      },
+      message: "Results processed successfully",
     });
   } catch (e) {
     res.status(400).json({
