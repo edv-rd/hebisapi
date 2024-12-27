@@ -97,7 +97,7 @@ app.post("/puzzlehub/add", async (req, res) => {
       });
 
       if (!existingResult) {
-        const newResult = await new Result({
+        await new Result({
           result: result.result,
           game: result.result.gameName,
           username: username,
