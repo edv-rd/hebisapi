@@ -13,6 +13,18 @@ const categories: Category[] = [
     type: "nickname",
   },
   {
+    category: "nagonsomverb",
+    name: "Någon som verb?",
+    info: "Någon som verb",
+    type: "nagonsom",
+  },
+  {
+    category: "nagonsomobjekt",
+    name: "Någon som ... objekt?",
+    info: "Någon som objekt",
+    type: "nagonsom",
+  },
+  {
     category: "holestatus",
     name: "Hålstatus",
     info: "Status på hål",

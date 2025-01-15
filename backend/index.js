@@ -127,10 +127,14 @@ app.post("/puzzlehub/add", async (req, res) => {
 
 app.get("/puzzlehub/today", async (req, res) => {
   try {
+    console.log(req.query.date);
+    console.log(req.query.game);
     const allEntries = await Result.find({
       date: req.query.date,
       game: req.query.game,
     }).sort({ _id: -1 });
+
+    console.log(allEntries);
 
     res.json({ response: { allEntries } });
   } catch (e) {
