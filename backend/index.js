@@ -56,11 +56,14 @@ app.get("/all", async (req, res) => {
 
 app.post("/hide", async (req, res) => {
   try {
-    console.log(req.body);
-    const hiddenEntry = await Entry.findByIdAndUpdate(req.body.id, {
-      active: false,
+    const hiddenEntry = await Entry.findByIdAndUpdate(
+      req.body.id,
+      [{ $set: { active: { $eq: [false, "$active"] } } }],
+      { new: true }
+    );
+    res.json({ 
+      message: `Entry ${hiddenEntry._id} active status changed to ${hiddenEntry.active}` 
     });
-    res.json({ message: `hidden id ${hiddenEntry}` });
   } catch (e) {
     res.status(400).send(e);
   }
