@@ -67,13 +67,13 @@ function Entries({ category }: EntriesProps) {
       </button>
       <button
         className="bg-blue-300 hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-1 px-3 border border-blue-500 hover:border-transparent rounded"
-        onClick={() => enableAll(category.name)}
+        onClick={() => enableAll(category.category)}
       >
         enable all
       </button>
       <button
         className="bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-1 px-3 border border-red-500 hover:border-transparent rounded"
-        onClick={() => hideAll(category.name)}
+        onClick={() => hideAll(category.category)}
       >
         disable all
       </button>

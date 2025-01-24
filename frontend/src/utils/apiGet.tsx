@@ -77,6 +77,7 @@ export async function hideEntry(entryData: {
 }
 
 export async function hideAll(category: string): Promise<{ message: string }> {
+  console.log(`hideall category ${category}`);
   const response = await fetch(`${API_URL}/hideall`, {
     method: "POST",
     headers: {
