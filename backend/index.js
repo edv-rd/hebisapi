@@ -69,6 +69,34 @@ app.post("/hide", async (req, res) => {
   }
 });
 
+app.post("/hideall", async (req, res) => {
+  try {
+    const hiddenEntry = await Entry.updateMany({
+      category: req.body.category,
+    }, { $set: { active: false } })
+    
+    res.json({ 
+      message: `Entry ${hiddenEntry._id} active status changed to ${hiddenEntry.active}` 
+    });
+  } catch (e) {
+    res.status(400).send(e);
+  }
+});
+
+app.post("/enableall", async (req, res) => {
+  try {
+    const hiddenEntry = await Entry.updateMany({
+      category: req.body.category,
+    }, { $set: { active: true } })
+    
+    res.json({ 
+      message: `Entry ${hiddenEntry._id} active status changed to ${hiddenEntry.active}` 
+    });
+  } catch (e) {
+    res.status(400).send(e);
+  }
+});
+
 app.post("/add", async (req, res) => {
   try {
     const newEntry = await new Entry({

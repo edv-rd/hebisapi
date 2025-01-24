@@ -7,7 +7,7 @@ import categories from "./Categories";
 import { SetStateAction, useState } from "react";
 
 function App() {
-  const [shownCategory, setShownCategory] = useState("");
+  const [shownCategory, setShownCategory] = useState("nickname");
 
   const handleShownCategory = (category: SetStateAction<string>) => {
     setShownCategory(category);

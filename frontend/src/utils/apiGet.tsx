@@ -75,3 +75,41 @@ export async function hideEntry(entryData: {
   const data = await response.json();
   return data;
 }
+
+export async function hideAll(entryCategory: {
+  category: string;
+}): Promise<{ message: string }> {
+  const response = await fetch(`${API_URL}/hideall`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(entryCategory),
+  });
+
+  if (!response.ok) {
+    throw new Error(`Error: ${response.statusText}`);
+  }
+
+  const data = await response.json();
+  return data;
+}
+
+export async function enableAll(entryCategory: {
+  category: string;
+}): Promise<{ message: string }> {
+  const response = await fetch(`${API_URL}/enableall`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(entryCategory),
+  });
+
+  if (!response.ok) {
+    throw new Error(`Error: ${response.statusText}`);
+  }
+
+  const data = await response.json();
+  return data;
+}

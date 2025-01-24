@@ -65,6 +65,19 @@ function Entries({ category }: EntriesProps) {
       >
         {collapsed ? "show" : "hide"}
       </button>
+      <button
+        className="bg-blue-300 hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-1 px-3 border border-blue-500 hover:border-transparent rounded"
+        onClick={() => setCollapsed(!collapsed)}
+      >
+        enable all
+      </button>
+      <button
+        className="bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-1 px-3 border border-red-500 hover:border-transparent rounded"
+        onClick={() => setCollapsed(!collapsed)}
+      >
+        disable all
+      </button>
+
       <h1 className="text-3xl font-extrabold">{category.name}</h1>
       <h2 className="text-1xl font-extrabold">{category.info}</h2>
 
