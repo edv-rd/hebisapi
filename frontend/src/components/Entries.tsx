@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchAll } from "../utils/apiGet";
+import { enableAll, hideAll, fetchAll } from "../utils/apiGet";
 import Entry from "./Entry";
 import AddEntry from "./AddEntry";
 
@@ -67,13 +67,13 @@ function Entries({ category }: EntriesProps) {
       </button>
       <button
         className="bg-blue-300 hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-1 px-3 border border-blue-500 hover:border-transparent rounded"
-        onClick={() => setCollapsed(!collapsed)}
+        onClick={() => enableAll(category.name)}
       >
         enable all
       </button>
       <button
         className="bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-1 px-3 border border-red-500 hover:border-transparent rounded"
-        onClick={() => setCollapsed(!collapsed)}
+        onClick={() => hideAll(category.name)}
       >
         disable all
       </button>

@@ -76,9 +76,9 @@ export async function hideEntry(entryData: {
   return data;
 }
 
-export async function hideAll(entryCategory: {
-  category: string;
-}): Promise<{ message: string }> {
+export async function hideAll(
+  entryCategory: string
+): Promise<{ message: string }> {
   const response = await fetch(`${API_URL}/hideall`, {
     method: "POST",
     headers: {
@@ -95,9 +95,9 @@ export async function hideAll(entryCategory: {
   return data;
 }
 
-export async function enableAll(entryCategory: {
-  category: string;
-}): Promise<{ message: string }> {
+export async function enableAll(
+  entryCategory: string
+): Promise<{ message: string }> {
   const response = await fetch(`${API_URL}/enableall`, {
     method: "POST",
     headers: {
