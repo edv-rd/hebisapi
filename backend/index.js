@@ -9,7 +9,11 @@ import Result from "./Result.js";
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: ['https://hebisadmin.onrender.com', 'http://localhost:5173'],
+  methods: ['GET', 'POST'],
+  credentials: true
+}));
 const port = 3000; // Change this to your desired port
 
 mongoose.connect(`${DB_URL}`, {

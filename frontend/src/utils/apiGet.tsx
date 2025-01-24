@@ -76,19 +76,17 @@ export async function hideEntry(entryData: {
   return data;
 }
 
-export async function hideAll(
-  entryCategory: string
-): Promise<{ message: string }> {
+export async function hideAll(category: string): Promise<{ message: string }> {
   const response = await fetch(`${API_URL}/hideall`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(entryCategory),
+    body: JSON.stringify({ category: category }),
   });
 
   if (!response.ok) {
-    throw new Error(`Error: ${response.statusText}`);
+    throw new Error(`Error: ${response.status} ${response.statusText}`);
   }
 
   const data = await response.json();
@@ -96,18 +94,18 @@ export async function hideAll(
 }
 
 export async function enableAll(
-  entryCategory: string
+  category: string
 ): Promise<{ message: string }> {
   const response = await fetch(`${API_URL}/enableall`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(entryCategory),
+    body: JSON.stringify({ category: category }), // Fix: Send category in correct format
   });
 
   if (!response.ok) {
-    throw new Error(`Error: ${response.statusText}`);
+    throw new Error(`Error: ${response.status} ${response.statusText}`);
   }
 
   const data = await response.json();
