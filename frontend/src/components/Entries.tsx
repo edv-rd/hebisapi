@@ -27,18 +27,19 @@ function Entries({ category }: EntriesProps) {
 
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    async function fetchEntries() {
-      setLoading(true);
-      try {
-        const result = await fetchAll(category.category);
-        setEntries(result.response.entries);
-      } catch (err) {
-        console.error(`Error: ${err}`);
-      } finally {
-        setLoading(false);
-      }
+  async function fetchEntries() {
+    setLoading(true);
+    try {
+      const result = await fetchAll(category.category);
+      setEntries(result.response.entries);
+    } catch (err) {
+      console.error(`Error: ${err}`);
+    } finally {
+      setLoading(false);
     }
+  }
+
+  useEffect(() => {
     fetchEntries();
   }, [category.category]);
 
@@ -67,13 +68,25 @@ function Entries({ category }: EntriesProps) {
       </button>
       <button
         className="bg-blue-300 hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-1 px-3 border border-blue-500 hover:border-transparent rounded"
-        onClick={() => enableAll(category.category)}
+        onClick={async () => {
+          setLoading(true);
+          await enableAll(category.category).then(() => {
+            fetchEntries();
+            setLoading(false);
+          });
+        }}
       >
         enable all
       </button>
       <button
         className="bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-1 px-3 border border-red-500 hover:border-transparent rounded"
-        onClick={() => hideAll(category.category)}
+        onClick={async () => {
+          setLoading(true);
+          await hideAll(category.category).then(() => {
+            fetchEntries();
+            setLoading(false);
+          });
+        }}
       >
         disable all
       </button>
