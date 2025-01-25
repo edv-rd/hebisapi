@@ -10,7 +10,7 @@ import Result from "./Result.js";
 const app = express();
 app.use(express.json());
 app.use(cors({
-  origin: ['https://hebisadmin.onrender.com', 'http://localhost:5173'],
+  origin: ['https://hebisadmin.onrender.com', 'http://localhost:5173', 'https://puzzlehub.edvardshemsida.se'],
   methods: ['GET', 'POST'],
   credentials: true
 }));
