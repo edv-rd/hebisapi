@@ -162,17 +162,19 @@ app.post("/puzzlehub/add", async (req, res) => {
 
 app.get("/puzzlehub/today", async (req, res) => {
   try {
-    console.log(req.query.date);
-    console.log(req.query.game);
+    const queryDate = req.query.date;
+    const queryGame = req.query.game;
+
     const allEntries = await Result.find({
-      date: req.query.date,
-      game: req.query.game,
+      date: queryDate,
+      game: queryGame,
     }).sort({ _id: -1 });
 
-    console.log(allEntries);
+    // console.log(`Found ${allEntries.length} entries for ${queryGame} on ${queryDate}`);
 
     res.json({ response: { allEntries } });
   } catch (e) {
+    console.error('Error:', e);
     res.status(400).send(e);
   }
 });
