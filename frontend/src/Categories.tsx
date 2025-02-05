@@ -144,6 +144,37 @@ const categories: Category[] = [
     info: "Lösningen på problemet är enkel - lösning",
     type: "opinion 4",
   },
+  {
+    category: "livsstilfornamn",
+    name: "Livsstilsskribent förnamn",
+    info: "Förnamnet på livsstilsskribenten",
+    type: "livsstil skribent",
+  },
+  {
+    category: "livsstilefternamn",
+    name: "Livsstilsskribent efternamn",
+    info: "Efternamnet på livsstilsskribenten",
+    type: "livsstil skribent",
+  },
+
+  {
+    category: "livsstil gnista koncept",
+    name: "Koncept",
+    info: "Hur koncept gav mig gnistan tillbaks",
+    type: "livsstil 1",
+  },
+  {
+    category: "livsstil 2 aktivitet",
+    name: "Aktivitet",
+    info: "99 tips - så får du bättre aktivitet med koncept",
+    type: "livsstil 2",
+  },
+  {
+    category: "livsstil 2 koncept",
+    name: "Koncept",
+    info: "99 tips - så får du bättre aktivitet med koncept",
+    type: "livsstil 2",
+  },
 ];
 
 export default categories;
