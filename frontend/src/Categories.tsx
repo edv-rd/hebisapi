@@ -160,20 +160,14 @@ const categories: Category[] = [
   {
     category: "livsstil gnista koncept",
     name: "Koncept",
-    info: "Hur koncept gav mig gnistan tillbaks",
-    type: "livsstil 1",
+    info: "Hur koncept gav mig gnistan tillbaks .. 99 tips ...",
+    type: "livsstil",
   },
   {
     category: "livsstil 2 aktivitet",
     name: "Aktivitet",
     info: "99 tips - så får du bättre aktivitet med koncept",
-    type: "livsstil 2",
-  },
-  {
-    category: "livsstil 2 koncept",
-    name: "Koncept",
-    info: "99 tips - så får du bättre aktivitet med koncept",
-    type: "livsstil 2",
+    type: "livsstil",
   },
 ];
 

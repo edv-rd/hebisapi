@@ -44,10 +44,7 @@ function Entries({ category }: EntriesProps) {
   }, [category.category]);
 
   const handleEntryAdded = (newEntry: EntryType) => {
-    console.log("handleEntryAdded");
-
     setEntries((prevEntries) => [newEntry, ...prevEntries]);
-    console.dir(newEntry);
   };
 
   const handleEntryHidden = (id: string) => {
@@ -91,7 +88,9 @@ function Entries({ category }: EntriesProps) {
         disable all
       </button>
 
-      <h1 className="text-3xl font-extrabold">{category.name}</h1>
+      <h1 className="text-3xl font-extrabold">
+        {category.name} ({entries.length} st)
+      </h1>
       <h2 className="text-1xl font-extrabold">{category.info}</h2>
 
       <div className={`${collapsed ? "hidden" : ""}`}>
