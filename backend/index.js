@@ -1,11 +1,18 @@
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
+import { readFile } from 'fs/promises';
+import uniqueRandomArray from 'unique-random-array';
 
 import { DB_URL } from "./utils.js";
 
 import Entry from "./Schema.js";
 import Result from "./Result.js";
+
+const getWords = async () => {
+  const words = JSON.parse(await readFile(new URL('./words.json', import.meta.url)));
+  return words;
+};
 
 const app = express();
 app.use(express.json());
@@ -55,6 +62,23 @@ app.get("/all", async (req, res) => {
     });
   } catch (e) {
     res.status(400).send(e);
+  }
+});
+
+app.get("/wordle", async (req, res) => {
+  try {
+    const words = await getWords();
+    const random = uniqueRandomArray(words);
+    
+    res.json({
+      success: true,
+      word: random()
+    });
+  } catch (e) {
+    res.status(400).json({
+      success: false,
+      error: e.message
+    });
   }
 });
 
