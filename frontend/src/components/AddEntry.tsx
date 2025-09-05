@@ -35,7 +35,7 @@ function AddEntry({ category, onEntryAdded }: AddEntryProps) {
   }
 
   return (
-    <form onSubmit={handleAddEntry} className="flex flex-column gap-2">
+    <form onSubmit={handleAddEntry} className="flex flex-col gap-2">
       <input
         className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500"
         type="text"
