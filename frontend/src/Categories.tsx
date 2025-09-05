@@ -169,6 +169,24 @@ const categories: Category[] = [
     info: "99 tips - så får du bättre aktivitet med koncept",
     type: "livsstil",
   },
+  {
+    category: "sport sport",
+    name: "Sport",
+    info: "En sport",
+    type: "sport",
+  },
+  {
+    category: "sport lag",
+    name: "Lag",
+    info: "Ett lag",
+    type: "sport",
+  },
+  {
+    category: "sport hast",
+    name: "Travhäst",
+    info: "En travhäst",
+    type: "sport",
+  },
 ];
 
 export default categories;
