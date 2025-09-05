@@ -56,7 +56,7 @@ function Entries({ category }: EntriesProps) {
   };
 
   return (
-    <div className="p-6 gap-4 bg-white border">
+    <div className=" bg-white border flex flex-wrap gap-2 p-2 max-w-full">
       <button
         className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-1 px-3 border border-blue-500 hover:border-transparent rounded"
         onClick={() => setCollapsed(!collapsed)}
