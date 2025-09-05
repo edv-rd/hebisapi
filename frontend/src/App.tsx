@@ -16,7 +16,7 @@ function App() {
   return (
     <>
       <Sidebar handleShownCategory={handleShownCategory} />
-      <div className="flex flex-row p-6 gap-3">
+      <div className="flex flex-col md:flex-row p-6 gap-3">
         {categories
           .filter((c) => shownCategory === "" || c.type === shownCategory)
           .map((c) => {
