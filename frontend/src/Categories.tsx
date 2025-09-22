@@ -187,6 +187,18 @@ const categories: Category[] = [
     info: "En travhäst",
     type: "sport",
   },
+  {
+    category: "justdied_name",
+    name: "Person",
+    info: "Person död av orsak",
+    type: "justdied",
+  },
+  {
+    category: "justdied_orsak",
+    name: "orsak",
+    info: "Person död av orsak",
+    type: "justdied",
+  },
 ];
 
 export default categories;
