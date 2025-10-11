@@ -203,6 +203,33 @@ app.get("/puzzlehub/today", async (req, res) => {
   }
 });
 
+app.get("/convoy", async (req, res) => {
+  try {
+    
+    let convoyEntry = await Entry.findOne({ category: "convoy" });
+
+    if (!convoyEntry) {
+      return res.status(404).json({ message: "convoy not found" });
+    }
+
+  
+    let currentValue = parseInt(convoyEntry.entry, 10) || 0;
+    let newValue = currentValue + 1;
+
+    
+    convoyEntry.entry = newValue.toString();
+    await convoyEntry.save();
+
+    
+    res.json({
+      message: `got convoy`,
+      response: { entry: newValue.toString() },
+    });
+  } catch (e) {
+    res.status(400).send(e);
+  }
+});
+
 app.listen(port, () => {
   console.log(`hebis backend igång på ${port}`);
 });
