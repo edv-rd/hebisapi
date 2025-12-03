@@ -191,5 +191,11 @@
     "name": "orsak",
     "info": "Person död av orsak",
     "type": "justdied"
+  },
+  {
+    "category": "toxxnamn",
+    "name": "toxxnamn",
+    "info": "Räligt namn att toxxa till",
+    "type": "toxxnamn"
   }
 ]
