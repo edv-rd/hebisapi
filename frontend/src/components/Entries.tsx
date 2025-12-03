@@ -56,37 +56,39 @@ function Entries({ category }: EntriesProps) {
   };
 
   return (
-    <div className="p-6 gap-4 bg-white border">
-      <button
-        className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-1 px-3 border border-blue-500 hover:border-transparent rounded"
-        onClick={() => setCollapsed(!collapsed)}
-      >
-        {collapsed ? "show" : "hide"}
-      </button>
-      <button
-        className="bg-blue-300 hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-1 px-3 border border-blue-500 hover:border-transparent rounded"
-        onClick={async () => {
-          setLoading(true);
-          await enableAll(category.category).then(() => {
-            fetchEntries();
-            setLoading(false);
-          });
-        }}
-      >
-        enable all
-      </button>
-      <button
-        className="bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-1 px-3 border border-red-500 hover:border-transparent rounded"
-        onClick={async () => {
-          setLoading(true);
-          await hideAll(category.category).then(() => {
-            fetchEntries();
-            setLoading(false);
-          });
-        }}
-      >
-        disable all
-      </button>
+    <div className="bg-white border flex flex-col gap-2 p-2 max-w-full">
+      <div className="flex flex-row flex-wrap gap-2 items-center mb-2">
+        <button
+          className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-1 px-3 border border-blue-500 hover:border-transparent rounded"
+          onClick={() => setCollapsed(!collapsed)}
+        >
+          {collapsed ? "show" : "hide"}
+        </button>
+        <button
+          className="bg-blue-300 hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-1 px-3 border border-blue-500 hover:border-transparent rounded"
+          onClick={async () => {
+            setLoading(true);
+            await enableAll(category.category).then(() => {
+              fetchEntries();
+              setLoading(false);
+            });
+          }}
+        >
+          enable all
+        </button>
+        <button
+          className="bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-1 px-3 border border-red-500 hover:border-transparent rounded"
+          onClick={async () => {
+            setLoading(true);
+            await hideAll(category.category).then(() => {
+              fetchEntries();
+              setLoading(false);
+            });
+          }}
+        >
+          disable all
+        </button>
+      </div>
 
       <h1 className="text-3xl font-extrabold">
         {category.name} ({entries.length} st)
