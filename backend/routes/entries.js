@@ -11,9 +11,20 @@ router.get("/random", async (req, res) => {
       { $sample: { size: 1 } },
     ]);
 
+    if (!randomEntry.length) {
+      return res.status(404).json({
+        message: `no active entries found for category ${req.query.category}`,
+      });
+    }
+
+    const picked = randomEntry[0];
+
+    // mark this entry as inactive (one-time use)
+    await Entry.findByIdAndUpdate(picked._id, { $set: { active: false } });
+
     res.json({
       message: `got random from category ${req.query.category}`,
-      response: { entry: randomEntry },
+      response: { entry: picked },
     });
   } catch (e) {
     res.status(400).send(e);
