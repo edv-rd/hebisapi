@@ -42,7 +42,7 @@ db.once("open", () => {
 });
 
 // mount routers
-app.use("/entries", entriesRouter);          // /random, /all, /add, /hide, /hideall, /enableall
+app.use("/", entriesRouter);          // /random, /all, /add, /hide, /hideall, /enableall
 app.use("/puzzlehub", puzzlehubRouter); // /puzzlehub/add, /puzzlehub/today
 app.use("/convoy", convoyRouter);       // /convoy
 app.use("/wordle", wordleRouter);       // /wordle
