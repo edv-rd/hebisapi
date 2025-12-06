@@ -5,6 +5,7 @@ const router = Router();
 
 // GET /random
 router.get("/random", async (req, res) => {
+  console.log("Category requested:", req.query.category);
   try {
     const randomEntry = await Entry.aggregate([
       { $match: { category: req.query.category, active: { $ne: false } } },
@@ -18,15 +19,23 @@ router.get("/random", async (req, res) => {
     }
 
     const picked = randomEntry[0];
+    console.log("Picked entry from aggregate:", picked);
 
     // mark this entry as inactive (one-time use)
-    await Entry.findByIdAndUpdate(picked._id, { $set: { active: false } });
+    const updated = await Entry.findByIdAndUpdate(
+      picked._id,
+      { $set: { active: false } },
+      { new: true }
+    );
+
+    console.log("Updated entry:", updated);
 
     res.json({
       message: `got random from category ${req.query.category}`,
-      response: { entry: picked },
+      response: { entry: updated },
     });
   } catch (e) {
+    console.error("Error in /random:", e);
     res.status(400).send(e);
   }
 });
