@@ -5,34 +5,41 @@ const router = Router();
 
 // GET /random
 router.get("/random", async (req, res) => {
-  console.log("Category requested:", req.query.category);
+  const { category, inactivate } = req.query;
+  console.log("Category requested:", category, "inactivate:", inactivate);
+
   try {
     const randomEntry = await Entry.aggregate([
-      { $match: { category: req.query.category, active: { $ne: false } } },
+      { $match: { category, active: { $ne: false } } },
       { $sample: { size: 1 } },
     ]);
 
     if (!randomEntry.length) {
       return res.status(404).json({
-        message: `no active entries found for category ${req.query.category}`,
+        message: `no active entries found for category ${category}`,
       });
     }
 
     const picked = randomEntry[0];
     console.log("Picked entry from aggregate:", picked);
 
-    // mark this entry as inactive (one-time use)
-    const updated = await Entry.findByIdAndUpdate(
-      picked._id,
-      { $set: { active: false } },
-      { new: true }
-    );
+    let responseEntry = picked;
 
-    console.log("Updated entry:", updated);
+    // only inactivate when explicitly requested
+    if (inactivate === "true") {
+      const updated = await Entry.findByIdAndUpdate(
+        picked._id,
+        { $set: { active: false } },
+        { new: true }
+      );
+
+      console.log("Updated entry:", updated);
+      responseEntry = updated;
+    }
 
     res.json({
-      message: `got random from category ${req.query.category}`,
-      response: { entry: updated },
+      message: `got random from category ${category}`,
+      response: { entry: responseEntry },
     });
   } catch (e) {
     console.error("Error in /random:", e);
