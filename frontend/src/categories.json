@@ -197,5 +197,23 @@
     "name": "toxxnamn",
     "info": "Räligt namn att toxxa till",
     "type": "toxxnamn"
+  },
+  {
+    "category": "forum username",
+    "name": "Användarnamn",
+    "info": "Användarnamn på forum",
+    "type": "forum"
+  },
+  {
+    "category": "forum post",
+    "name": "Forumpost",
+    "info": "En forumpost",
+    "type": "forum"
+  },
+  {
+    "category": "forum signature",
+    "name": "Forumsignatur",
+    "info": "En forumsignatur",
+    "type": "forum"
   }
 ]
