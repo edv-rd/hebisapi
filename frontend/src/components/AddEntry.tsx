@@ -36,15 +36,26 @@ function AddEntry({ category, onEntryAdded }: AddEntryProps) {
 
   return (
     <form onSubmit={handleAddEntry} className="flex flex-col gap-2">
-      <input
-        className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500"
-        type="text"
-        value={formEntry}
-        onChange={(e) => setFormEntry(e.target.value)}
-        placeholder="Add entry"
-        maxLength={category === "nickname" ? 32 : undefined}
-        disabled={isSubmitting}
-      />
+      {category === "forum post" || category === "forum signature" ? (
+        <textarea
+          className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500 resize-y"
+          rows={4}
+          value={formEntry}
+          onChange={(e) => setFormEntry(e.target.value)}
+          placeholder="Add entry"
+          disabled={isSubmitting}
+        />
+      ) : (
+        <input
+          className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500"
+          type="text"
+          value={formEntry}
+          onChange={(e) => setFormEntry(e.target.value)}
+          placeholder="Add entry"
+          maxLength={category === "nickname" ? 32 : undefined}
+          disabled={isSubmitting}
+        />
+      )}
       <button
         type="submit"
         className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
