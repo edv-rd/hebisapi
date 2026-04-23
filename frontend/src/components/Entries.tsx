@@ -50,8 +50,8 @@ function Entries({ category }: EntriesProps) {
   const handleEntryHidden = (id: string) => {
     setEntries((prevEntries) =>
       prevEntries.map((entry) =>
-        entry._id === id ? { ...entry, active: !entry.active } : entry
-      )
+        entry._id === id ? { ...entry, active: !entry.active } : entry,
+      ),
     );
   };
 
@@ -91,7 +91,8 @@ function Entries({ category }: EntriesProps) {
       </div>
 
       <h1 className="text-3xl font-extrabold">
-        {category.name} ({entries.length} st)
+        {category.name} ({entries.length} st (
+        {entries.filter((entry) => entry.active).length} active))
       </h1>
       <h2 className="text-1xl font-extrabold">{category.info}</h2>
 
