@@ -92,7 +92,7 @@ function Entries({ category }: EntriesProps) {
 
       <h1 className="text-3xl font-extrabold">
         {category.name} ({entries.length} st (
-        {entries.filter((entry) => entry.active).length} active))
+        {entries.filter((entry) => entry.active).length} aktiva))
       </h1>
       <h2 className="text-1xl font-extrabold">{category.info}</h2>
 
