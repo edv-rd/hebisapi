@@ -1,5 +1,5 @@
 // models/Message.js
-const mongoose = require('mongoose');
+import mongoose from "mongoose";
 
 const messageSchema = new mongoose.Schema({
   messageId: { type: String, required: true },
@@ -16,4 +16,5 @@ const messageSchema = new mongoose.Schema({
 messageSchema.index({ messageId: 1, serverId: 1 }, { unique: true });
 messageSchema.index({ serverId: 1 });
 
-module.exports = mongoose.model('Message', messageSchema);
+module.exports = mongoose.model('Post', messageSchema);
+export default mongoose.model('Post', messageSchema);
