@@ -16,5 +16,5 @@ const messageSchema = new mongoose.Schema({
 messageSchema.index({ messageId: 1, serverId: 1 }, { unique: true });
 messageSchema.index({ serverId: 1 });
 
-module.exports = mongoose.model('Post', messageSchema);
+
 export default mongoose.model('Post', messageSchema);
