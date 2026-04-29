@@ -7,6 +7,7 @@ import { DB_URL } from "./utils.js";
 // models just need to be imported once so mongoose registers them
 import Entry from "./Schema.js";
 import Result from "./Result.js";
+import Post from "./Post.js";
 
 // routers
 import entriesRouter from "./routes/entries.js";
@@ -46,6 +47,7 @@ app.use("/", entriesRouter);          // /random, /all, /add, /hide, /hideall, /
 app.use("/puzzlehub", puzzlehubRouter); // /puzzlehub/add, /puzzlehub/today
 app.use("/convoy", convoyRouter);       // /convoy
 app.use("/wordle", wordleRouter);       // /wordle
+app.use("/post", Post); // /post
 
 app.listen(port, () => {
   console.log(`hebis backend igång på ${port}`);
