@@ -47,7 +47,7 @@ app.use("/", entriesRouter);          // /random, /all, /add, /hide, /hideall, /
 app.use("/puzzlehub", puzzlehubRouter); // /puzzlehub/add, /puzzlehub/today
 app.use("/convoy", convoyRouter);       // /convoy
 app.use("/wordle", wordleRouter);       // /wordle
-app.use("/post", Post); // /post
+app.use("/posts", Post); // /post
 
 app.listen(port, () => {
   console.log(`hebis backend igång på ${port}`);
