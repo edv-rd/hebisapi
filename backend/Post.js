@@ -9,7 +9,8 @@ const messageSchema = new mongoose.Schema({
   authorName: { type: String, required: true },
   channelId: { type: String, required: true },
   reactionCount: { type: Number, default: 0 },
-  capturedAt: { type: Date, default: Date.now }
+  capturedAt: { type: Date, default: Date.now },
+  emoji: { type: String, default: "" },
 });
 
 // Compound index for fast queries
