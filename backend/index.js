@@ -9,11 +9,13 @@ import Entry from "./Schema.js";
 import Result from "./Result.js";
 import Post from "./Post.js";
 
+
 // routers
 import entriesRouter from "./routes/entries.js";
 import puzzlehubRouter from "./routes/puzzlehub.js";
 import convoyRouter from "./routes/convoy.js";
 import wordleRouter from "./routes/wordle.js";
+import postsRouter from "./routes/post.js";
 
 const app = express();
 app.use(express.json());
@@ -47,7 +49,7 @@ app.use("/", entriesRouter);          // /random, /all, /add, /hide, /hideall, /
 app.use("/puzzlehub", puzzlehubRouter); // /puzzlehub/add, /puzzlehub/today
 app.use("/convoy", convoyRouter);       // /convoy
 app.use("/wordle", wordleRouter);       // /wordle
-app.use("/posts", Post); // /post
+app.use("/posts", postsRouter); // /posts
 
 app.listen(port, () => {
   console.log(`hebis backend igång på ${port}`);

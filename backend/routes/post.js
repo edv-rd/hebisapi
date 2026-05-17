@@ -1,12 +1,12 @@
 import { Router } from "express";
-import Post from "../Post";
+import Post from "../Post.js";
 
 const router = Router();
 
-router.post('/messages', async (req, res) => {
+router.post('/add', async (req, res) => {
   const { messageId, serverId, content, authorId, authorName, channelId, reactionCount, capturedAt } = req.body;
   
-  await Message.findOneAndUpdate(
+  await Post.findOneAndUpdate(
     { messageId, serverId },
     { $set: { content, authorId, authorName, channelId, reactionCount, capturedAt } },
     { upsert: true }
@@ -16,21 +16,23 @@ router.post('/messages', async (req, res) => {
 });
 
 // GET /messages/random?serverId=xxx - Get two random messages
-router.get('/messages/random', async (req, res) => {
+router.get('/random', async (req, res) => {
   const { serverId } = req.query;
   
-  const messages = await Message.aggregate([
+  const messages = await Post.aggregate([
     { $match: { serverId } },
     { $sample: { size: 2 } }
   ]);
   
-  res.json({ 
-    messages: messages.map(m => ({
+  res.json({
+    messages: messages.map((m) => ({
       messageId: m.messageId,
       content: m.content,
       authorName: m.authorName,
-      reactionCount: m.reactionCount
-    }))
+      reactionCount: m.reactionCount,
+    })),
   });
 });
+
+export default router;
 
