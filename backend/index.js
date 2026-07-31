@@ -16,6 +16,7 @@ import puzzlehubRouter from "./routes/puzzlehub.js";
 import convoyRouter from "./routes/convoy.js";
 import wordleRouter from "./routes/wordle.js";
 import postsRouter from "./routes/post.js";
+import dailypromptRouter from "./routes/dailyprompt.js";
 
 const app = express();
 app.use(express.json());
@@ -50,6 +51,7 @@ app.use("/puzzlehub", puzzlehubRouter); // /puzzlehub/add, /puzzlehub/today
 app.use("/convoy", convoyRouter);       // /convoy
 app.use("/wordle", wordleRouter);       // /wordle
 app.use("/posts", postsRouter); // /posts
+app.use("/dailyprompt", dailypromptRouter); // /dailyprompt/random, /dailyprompt/all, /dailyprompt/add, /dailyprompt/hide, /dailyprompt/hideall, /dailyprompt/enableall
 
 app.listen(port, () => {
   console.log(`hebis backend igång på ${port}`);
