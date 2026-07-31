@@ -1,5 +1,5 @@
 import { Router } from "express";
-import Entry from "../Schema.js";
+import Entry from "../models/Schema.js";
 
 const router = Router();
 

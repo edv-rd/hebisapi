@@ -5,9 +5,9 @@ import cors from "cors";
 import { DB_URL } from "./utils.js";
 
 // models just need to be imported once so mongoose registers them
-import Entry from "./Schema.js";
-import Result from "./Result.js";
-import Post from "./Post.js";
+import Entry from "./models/Schema.js";
+import Result from "./models/Result.js";
+import Post from "./models/Post.js";
 
 
 // routers
