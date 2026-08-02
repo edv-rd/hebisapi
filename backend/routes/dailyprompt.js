@@ -55,11 +55,26 @@ router.get("/all", async (req, res) => {
 
 // POST /add
 router.post("/add", async (req, res) => {
+  const { content, type } = req.body;
+
+  if (!type || typeof type !== "string" || !type.trim()) {
+    return res.status(400).json({
+      success: false,
+      message: "type cannot be empty",
+    });
+  }
+
+  if (!content || typeof content !== "string" || !content.trim()) {
+    return res.status(400).json({
+      success: false,
+      message: "content cannot be empty",
+    });
+  }
+
   try {
     const newElement = await new Element({
-      content: req.body.content,
-      type: req.body.type,
-
+      content: content.trim(),
+      type: type.trim(),
     }).save();
 
     res.status(201).json({
@@ -73,7 +88,7 @@ router.post("/add", async (req, res) => {
   } catch (e) {
     res.status(400).json({
       success: false,
-      response: e,
+      response: e.message || e,
     });
   }
 });
