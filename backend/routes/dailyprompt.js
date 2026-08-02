@@ -55,7 +55,8 @@ router.get("/all", async (req, res) => {
 
 // POST /add
 router.post("/add", async (req, res) => {
-  const { content, type } = req.body;
+  const { content, element } = req.body;
+  let type = element;
 
   if (!type || typeof type !== "string" || !type.trim()) {
     return res.status(400).json({
