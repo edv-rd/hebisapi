@@ -17,6 +17,7 @@ router.get("/random", async (req, res) => {
     if (!randomElement.length) {
       return res.status(404).json({
         message: `no active entries found for type ${type}`,
+        response: null,
       });
     }
 
